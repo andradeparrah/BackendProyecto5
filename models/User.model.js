@@ -4,14 +4,28 @@ const UseSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
+        validate: {
+            validator:function(v){
+                return /^[a-zA-Z0-9 ]{3,30}$/.test(v)
+            }
+        }
     },
-    pass:{
+    password:{
         type: String,
         required: true
     },mail:{
         type: String,
-        required:true
+        required:true,
+        validate: {
+            validator:function(v){
+                return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v)
+            },
+        }, 
+        
     }
+}, {
+    timestamps:true
 });
 
-mongoose.model('User',UseSchema)
+const User = mongoose.model('User',UseSchema)
+module.exports = User
