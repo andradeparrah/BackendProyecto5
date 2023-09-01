@@ -13,7 +13,7 @@ const UseSchema = new mongoose.Schema({
     password:{
         type: String,
         required: true
-    },mail:{
+    },email:{
         type: String,
         required:true,
         validate: {
