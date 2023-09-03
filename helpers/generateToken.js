@@ -6,7 +6,7 @@ const generateToken=(user)=>{
     return jwt.sign({
         _id,
         username,
-        email
+        email,
     },secret, {
         expiresIn:'1d'
     } ) 
