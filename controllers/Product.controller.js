@@ -11,7 +11,6 @@ const createProduct=async(req,res)=>{
             modelo,
             precio
         })
-        console.log(product)
         const resp=await product.save()
         return res.status(201).json({
             message: "Product created",

@@ -4,7 +4,7 @@ const { getUsers, signup, deleteUser, updateUser, getUserById, login, deleteUser
 const auth = require('../middleWares/auth');
 
 router.get ('/', getUsers);
-router.post('/',signup);
+router.post('/register',signup);
 router.put('/', updateUser)
 router.delete('/',deleteUser)
 router.post('/login',login)
